@@ -4,14 +4,17 @@ import { authActions } from "../store";
 
 const Auth = () => {
   const dispatch = useDispatch();
-  const onLoginHandler = () => {
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
     dispatch(authActions.logIn());
   };
 
   return (
     <main className={classes.auth}>
       <section>
-        <form>
+        <form onSubmit={onSubmitHandler}>
           <div className={classes.control}>
             <label htmlFor="email">Email</label>
             <input type="email" id="email" />
@@ -20,7 +23,7 @@ const Auth = () => {
             <label htmlFor="password">Password</label>
             <input type="password" id="password" />
           </div>
-          <button onClick={onLoginHandler}>Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>
