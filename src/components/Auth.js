@@ -1,11 +1,11 @@
 import classes from "./Auth.module.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { authActions } from "../store";
 
 const Auth = () => {
   const dispatch = useDispatch();
   const onLoginHandler = () => {
-    dispatch(authActions.login());
+    dispatch(authActions.logIn());
   };
 
   return (
